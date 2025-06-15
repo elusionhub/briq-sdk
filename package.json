@@ -1,5 +1,5 @@
 {
-  "name": "briq-sdk",
+  "name": "@elusion-sdk/briq",
   "module": "src/index.ts",
   "type": "module",
   "version": "0.0.0-development",
