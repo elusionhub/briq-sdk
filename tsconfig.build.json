@@ -3,7 +3,8 @@
     "compilerOptions": {
         "noEmit": false,
         "emitDeclarationOnly": false,
-        "sourceMap": false,
+        "sourceMap": true,
+        "inlineSources": true,
         "removeComments": true
     },
     "exclude": [
