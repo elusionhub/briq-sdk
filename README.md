@@ -140,6 +140,7 @@ This SDK is built with TypeScript and provides full type definitions. No need to
 ```bash
 # Clone and install
 git clone https://github.com/elusionhub/briq-sdk.git
+
 cd briq-sdk
 bun install
 
