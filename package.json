@@ -1,30 +1,86 @@
 {
   "name": "@elusion-sdk/briq",
-  "module": "src/index.ts",
-  "type": "module",
   "version": "0.0.0-development",
+  "description": "A modern TypeScript SDK for Briq SMS API integration",
   "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    }
+  },
   "scripts": {
-    "build": "bun build src/index.ts --outdir dist --target node",
+    "build": "bun run build:clean && bun run build:cjs && bun run build:esm && bun run build:types",
+    "build:clean": "rm -rf dist",
+    "build:cjs": "bun build src/index.ts --outdir dist --target node --format cjs --outfile index.js",
+    "build:esm": "bun build src/index.ts --outdir dist --target node --format esm --outfile index.esm.js",
+    "build:types": "tsc --project tsconfig.build.json",
     "test": "bun test",
+    "test:watch": "bun test --watch",
+    "test:coverage": "bun test --coverage",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.ts",
+    "format:check": "prettier --check src/**/*.ts",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "bun run lint && bun run type-check && bun run build && bun run test",
     "release": "semantic-release"
   },
+  "keywords": [
+    "sms",
+    "briq",
+    "elusion",
+    "messaging",
+    "notifications",
+    "typescript",
+    "sdk",
+    "api",
+    "communications",
+    "text-messaging",
+    "bulk-sms"
+  ],
+  "author": "Elution Hub <elusion.lab@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elusionhub/briq-sdk.git"
+  },
+  "homepage": "https://github.com/elusionhub/briq-sdk#readme",
+  "bugs": {
+    "url": "https://github.com/elusionhub/briq-sdk/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "bun": ">=1.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/node": "^24.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.34.0",
+    "@typescript-eslint/parser": "^8.34.0",
+    "eslint": "^9.29.0",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.29.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
-    "dotenv": "^16.5.0",
-    "semantic-release": "^24.2.5"
-  },
-  "files": [
-    "dist",
-    "CHANGELOG.md",
-    "README.md"
-  ],
-  "publishConfig": {
-    "access": "public"
+    "dotenv": "^16.5.0"
   }
 }

@@ -1,45 +1,67 @@
 {
   "compilerOptions": {
     "lib": [
-      "ESNext"
+      "ES2022",
+      "DOM"
     ],
-    "target": "ESNext",
+    "target": "ES2022",
     "module": "ESNext",
     "moduleDetection": "force",
-    "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "noEmit": true,
+    "verbatimModuleSyntax": false,
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
     "strict": true,
-    "skipLibCheck": true,
-    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
     "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
     "baseUrl": "./src",
     "paths": {
       "@/*": [
         "./*"
       ],
-      "@client/*": [
-        "./client/*"
+      "@/types": [
+        "./types"
       ],
-      "@services/*": [
-        "./services/*"
+      "@/providers": [
+        "./providers"
       ],
-      "@types/*": [
-        "./types/*"
+      "@/utils": [
+        "./utils"
+      ],
+      "@/client": [
+        "./client"
       ]
-    }
+    },
+    "sourceMap": true,
+    "inlineSources": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": [
-    "src/**/*",
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",
     "dist",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "test/**/*",
+    "examples/**/*"
   ],
+  "ts-node": {
+    "esm": true
+  }
 }

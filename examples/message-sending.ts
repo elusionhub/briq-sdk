@@ -6,9 +6,9 @@ async function sendMessage() {
 
     try {
         const response = await client.messages.sendInstant({
-            recipients: ['255781588379'],
+            recipients: ['255700000000'],
             content: 'Hello from Briq!',
-            sender_id: 'BRIQ',
+            sender_id: 'your-sender-id',
         });
         if (Array.isArray(response.data)) {
             console.log('Message sent successfully:', response.data.map(msg => msg.status));

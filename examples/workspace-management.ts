@@ -59,7 +59,7 @@ async function listWorkSpaces() {
 
 async function main() {
     // await checkConnection();
-    listWorkSpaces();
+    // listWorkSpaces();
     // await createWorkSpace('Test Workspace', 'This is a test workspace created using the Briq SDK');
     // await getWorkSpace("466e6a77-6f38-4b51-afbb-4b63ebf4ff43");
     // await updateWorkSpace("466e6a77-6f38-4b51-afbb-4b63ebf4ff43", 'Updated Workspace', 'This is an updated description');
