@@ -1,4 +1,4 @@
-import type { BaseClient } from "@/client/BaseClient";
+import type { BaseClient } from "../client/BaseClient";
 
 /**
  * Abstract base service class

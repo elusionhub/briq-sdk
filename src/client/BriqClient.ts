@@ -1,8 +1,8 @@
 import { HttpClient } from "./HttpClient";
-import { WorkspaceService } from "@/services/WorkspaceService";
-import { MessageService } from "@/services/MessageService";
-import { CampaignService } from "@/services/CampaignService";
-import type { BriqConfig } from "@/types/common";
+import { WorkspaceService } from "../services/WorkspaceService";
+import { MessageService } from "../services/MessageService";
+import { CampaignService } from "../services/CampaignService";
+import type { BriqConfig } from "../types/common";
 import { validateApiKey } from "../utils/validators";
 import { ConfigurationError } from "../utils/errors";
 import { API_CONFIG } from "../utils/constants";

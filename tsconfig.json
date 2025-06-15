@@ -28,23 +28,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "baseUrl": "./src",
-    "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "@/types": [
-        "./types"
-      ],
-      "@/providers": [
-        "./providers"
-      ],
-      "@/utils": [
-        "./utils"
-      ],
-      "@/client": [
-        "./client"
-      ]
-    },
     "sourceMap": true,
     "inlineSources": true,
     "esModuleInterop": true,

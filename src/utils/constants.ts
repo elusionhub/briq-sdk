@@ -1,4 +1,4 @@
-import { getDefaultsFromEnv } from "@/config/defaults";
+import { getDefaultsFromEnv } from "../config/defaults";
 
 /**
  * API version and base configuration
@@ -9,7 +9,7 @@ export const API_CONFIG = {
   VERSION: getDefaultsFromEnv().version,
   DEFAULT_TIMEOUT: getDefaultsFromEnv().timeout,
   DEFAULT_RETRIES: 3,
-  USER_AGENT: "Briq-SDK-TS/1.0.0",
+  USER_AGENT: "Briq-SDK-TS",
 } as const;
 
 /**

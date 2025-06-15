@@ -52,9 +52,6 @@ await briq.messages.sendInstant({
 
 // Get message logs
 const logs = await briq.messages.getLogs();
-
-// Check message status
-const status = await briq.messages.getStatus("message-id");
 ```
 
 ### Campaigns
