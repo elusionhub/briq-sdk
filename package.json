@@ -1,23 +1,29 @@
 {
   "name": "@elusion-sdk/briq",
-  "version": "0.0.0-development",
+  "version": "0.1.0",
   "description": "A modern TypeScript SDK for Briq SMS API integration",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
   "type": "module",
+  "main": "./dist/index.js",
+  "module": "dist/esm/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/index.js",
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js"
+      "default": "./dist/index.js"
     }
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "bun run build:clean && bun run build:cjs && bun run build:esm && bun run build:types",
     "build:clean": "rm -rf dist",
     "build:cjs": "bun build src/index.ts --outdir dist --target node --format cjs --outfile index.js",
-    "build:esm": "bun build src/index.ts --outdir dist --target node --format esm --outfile index.esm.js",
+    "build:esm": "bun build src/index.ts --outdir dist/esm --target node --format esm",
     "build:types": "tsc --project tsconfig.build.json",
     "test": "bun test",
     "test:watch": "bun test --watch",
@@ -43,7 +49,7 @@
     "text-messaging",
     "bulk-sms"
   ],
-  "author": "Elution Hub <elusion.lab@gmail.com>",
+  "author": "Elusion Hub <elusion.lab@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -57,11 +63,6 @@
     "node": ">=18.0.0",
     "bun": ">=1.0.0"
   },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
