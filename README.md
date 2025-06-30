@@ -157,3 +157,49 @@ MIT © [Elution Hub](https://github.com/elusionhub)
 - Email: elusion.lab@gmail.com
 - Issues: [GitHub Issues](https://github.com/elusionhub/briq-sdk/issues)
 - Docs: [API Documentation](https://github.com/elusionhub/briq-sdk#readme)
+
+```
+typescript-sdk
+├─ assets
+├─ bun.lock
+├─ content
+├─ CONTRIBUTING.md
+├─ eslint.config.cjs
+├─ examples
+│  ├─ campaign-management.ts
+│  ├─ message-sending.ts
+│  └─ workspace-management.ts
+├─ LICENSE
+├─ package.json
+├─ README.md
+├─ release.config.cjs
+├─ src
+│  ├─ client
+│  │  ├─ BaseClient.ts
+│  │  ├─ BriqClient.ts
+│  │  └─ HttpClient.ts
+│  ├─ config
+│  │  └─ defaults.ts
+│  ├─ factory.ts
+│  ├─ index.ts
+│  ├─ services
+│  │  ├─ BaseService.ts
+│  │  ├─ CampaignService.ts
+│  │  ├─ MessageService.ts
+│  │  └─ WorkspaceService.ts
+│  ├─ types
+│  │  ├─ campaign.ts
+│  │  ├─ common.ts
+│  │  ├─ message.ts
+│  │  └─ workspace.ts
+│  └─ utils
+│     ├─ constants.ts
+│     ├─ errors.ts
+│     ├─ helpers.ts
+│     └─ validators.ts
+├─ tests
+│  └─ blank.txt
+├─ tsconfig.build.json
+└─ tsconfig.json
+
+```

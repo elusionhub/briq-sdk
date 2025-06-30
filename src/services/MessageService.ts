@@ -16,11 +16,13 @@ import {
 } from "../utils/validators";
 import { ValidationError } from "../utils/errors";
 import { formatPhoneNumbers } from "../utils/helpers";
+import { getDefaultsFromEnv } from "config/defaults";
 
 /**
  * Service for managing messages
  */
 export class MessageService extends BaseService {
+  private senderId: string | undefined;
   /**
    * Send instant message to one or multiple recipients
    */
@@ -38,10 +40,24 @@ export class MessageService extends BaseService {
 
     const formattedRecipients = formatPhoneNumbers(recipients);
 
+    if (!request.sender_id) {
+      if (!this.senderId) {
+        this.senderId = getDefaultsFromEnv().senderId;
+      }
+      if (!this.senderId) {
+        throw new ValidationError("Sender ID is required, set BRIQ_SENDER_ID env variable or pass it in the request");
+      }
+    }
+
+    const senderId: string =
+      request.sender_id !== undefined
+        ? request.sender_id
+        : (this.senderId as string);
+
     const sanitizedRequest: SendInstantMessageRequest = {
       content: request.content,
       recipients: formattedRecipients,
-      sender_id: request.sender_id || "",
+      sender_id: senderId,
     };
 
     if (request.campaign_id) {
